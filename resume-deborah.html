@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deborah O - Project Manager | Advanced Control Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;500;600;700&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --primary: #FCB419;
+      --dark: #171717;
+      --highlight: #FFCC02;
+      --white: #FFFFFF;
+      --gray-50: #F8FAFB;
+      --gray-100: #F1F5F4;
+      --gray-200: #E2E8E7;
+      --gray-400: #94A3A0;
+      --gray-600: #4B5E5A;
+      --gray-700: #374845;
+      --font-heading: 'Merriweather', sans-serif;
+      --font-body: 'Lato', sans-serif;
+    }
+    body { font-family: var(--font-body); background: var(--gray-50); color: var(--dark); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    .back-link { display: block; background: var(--dark); padding: 12px 40px; font-family: var(--font-heading); font-size: 14px; font-weight: 500; }
+    .back-link a { color: var(--highlight); text-decoration: none; transition: color 0.2s; }
+    .back-link a:hover { color: var(--white); }
+    .back-link a::before { content: "\2190\00a0\00a0"; }
+    header { background: var(--dark); padding: 48px 40px 52px; position: relative; overflow: hidden; }
+    header::after { content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--primary), var(--highlight)); }
+    .header-brand { font-family: var(--font-heading); font-size: 32px; font-weight: 700; color: var(--white); letter-spacing: -0.5px; margin-bottom: 4px; }
+    .header-brand span { color: var(--highlight); }
+    .header-subtitle { font-family: var(--font-body); font-size: 14px; font-weight: 400; color: var(--gray-400); text-transform: uppercase; letter-spacing: 2px; }
+    .candidate-banner { background: linear-gradient(135deg, var(--primary), #FFCC02); padding: 36px 40px; color: var(--white); }
+    .candidate-name { font-family: var(--font-heading); font-size: 28px; font-weight: 700; letter-spacing: -0.3px; margin-bottom: 6px; }
+    .candidate-title { font-size: 16px; font-weight: 400; opacity: 0.9; margin-bottom: 12px; }
+    .candidate-contact { display: flex; flex-wrap: wrap; gap: 20px; font-size: 13px; opacity: 0.85; }
+    .resume-body { max-width: 900px; margin: 0 auto; padding: 40px 40px 60px; }
+    .section { margin-bottom: 36px; }
+    .section-title { font-family: var(--font-heading); font-size: 18px; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 1.5px; padding-bottom: 10px; border-bottom: 2px solid var(--gray-200); margin-bottom: 18px; }
+    .summary-text { font-size: 15px; color: var(--gray-700); line-height: 1.75; }
+    .skills-grid { display: grid; grid-template-columns: 170px 1fr; gap: 10px 20px; font-size: 14px; }
+    .skill-label { font-weight: 600; color: var(--dark); padding: 4px 0; }
+    .skill-value { color: var(--gray-600); padding: 4px 0; line-height: 1.6; }
+    .experience-item { margin-bottom: 24px; padding-left: 20px; border-left: 3px solid var(--primary); }
+    .experience-item:last-child { margin-bottom: 0; }
+    .exp-header { margin-bottom: 8px; }
+    .exp-role { font-family: var(--font-heading); font-size: 16px; font-weight: 700; color: var(--dark); }
+    .exp-company { font-size: 14px; font-weight: 500; color: var(--primary); }
+    .exp-meta { font-size: 13px; color: var(--gray-400); margin-top: 2px; }
+    .exp-desc { font-size: 14px; color: var(--gray-600); line-height: 1.65; }
+    .exp-bullets { font-size: 14px; color: var(--gray-600); line-height: 1.65; padding-left: 20px; margin-top: 6px; }
+    .exp-bullets li { margin-bottom: 4px; }
+    .education-item, .cert-item, .lang-item { font-size: 15px; margin-bottom: 8px; }
+    .edu-degree, .cert-name { font-weight: 600; color: var(--dark); }
+    .edu-school { color: var(--primary); font-weight: 500; }
+    .edu-year { font-size: 13px; color: var(--gray-400); }
+    footer { background: var(--dark); padding: 32px 40px; text-align: center; position: relative; }
+    footer::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--primary), var(--highlight)); }
+    .footer-text { font-family: var(--font-heading); font-size: 14px; color: var(--gray-400); }
+    .footer-text strong { color: var(--white); }
+    .footer-text .accent { color: var(--highlight); }
+    .footer-sub { font-size: 12px; color: var(--gray-600); margin-top: 8px; }
+    @media (max-width: 640px) {
+      header, .candidate-banner, .resume-body, .back-link, footer { padding-left: 20px; padding-right: 20px; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .candidate-contact { flex-direction: column; gap: 6px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="back-link"><a href="index.html">Back to All Candidates</a></div>
+  <header>
+    <div class="header-brand">Advanced Control Solutions<span>.</span></div>
+    <div class="header-subtitle">Candidate Resume</div>
+  </header>
+  <div class="candidate-banner">
+    <div class="candidate-name">Deborah O</div>
+    <div class="candidate-title">Project Manager | Nigeria</div>
+    <div class="candidate-contact">
+      <span>Nigeria</span>
+      <span>10 yrs Construction PM experience</span>
+    </div>
+  </div>
+  <div class="resume-body">
+    <div class="section"><div class="section-title">Professional Summary</div><p class="summary-text">Project Manager with 5+ years of experience delivering client-facing, production-driven projects across construction, signage-adjacent operations, and remote service environments. Proven ability to manage full project lifecycles from kickoff to final delivery, supporting sales teams, coordinating production partners, tracking budgets and timelines, and maintaining clear client communication. Highly organized, detail-oriented, and experienced working independently with US-based stakeholders and international teams.</p></div>
+    <div class="section"><div class="section-title">Skills &amp; Tech Stack</div><div class="skills-grid">
+    <div class="skill-label">Core Competencies</div>
+    <div class="skill-value">Project Lifecycle Management (Kickoff to Closeout), Signage &amp; Production Project Coordination, Sales &amp; Client Support Operations, Project Planning, Scheduling &amp; Budget Tracking, Cross-Functional &amp; Vendor Coordination, Client Communication &amp; Status Reporting, Documentation Management &amp; Process Control, Risk Tracking &amp; Issue Resolution, Remote Operations &amp; Independent Execution</div>
+    <div class="skill-label">Tools &amp; Systems</div>
+    <div class="skill-value">Google Workspace, Microsoft Excel, Microsoft PowerPoint, Trello, Slack, HubSpot (CRM), Monday.com, Corebridge, SharePoint</div></div></div>
+    <div class="section"><div class="section-title">Work Experience</div>
+    <div class="experience-item">
+      <div class="exp-header">
+        <div class="exp-role">Project Manager &amp; Director of Business Development</div>
+        <div class="exp-company">Fadebeth Ventures Ltd</div>
+        <div class="exp-meta">September 2025 – Present</div>
+      </div>
+      <ul class="exp-bullets"><li>Manage end-to-end delivery of operational and production-based projects, from client onboarding through execution and final handover.</li><li>Serve as operational support to leadership and sales-facing stakeholders, translating client requirements into structured project plans.</li><li>Develop detailed project schedules, task breakdowns, and budget trackers to ensure delivery within scope and timeline.</li><li>Coordinate with vendors, fabricators, installers, and internal teams to ensure accurate production and on-time delivery.</li><li>Maintain organized project documentation, trackers, and reports using digital project management tools.</li><li>Prepare weekly status updates and performance reports for internal and external stakeholders.</li></ul>
+    </div>
+    <div class="experience-item">
+      <div class="exp-header">
+        <div class="exp-role">Project Manager</div>
+        <div class="exp-company">Venture Tribe</div>
+        <div class="exp-meta">April 2025 – September 2025</div>
+      </div>
+      <ul class="exp-bullets"><li>Led cross-functional coordination for a SaaS platform supporting property and facilities operations.</li><li>Worked closely with sales-adjacent stakeholders to align client needs with delivery timelines.</li><li>Managed task tracking, priorities, and documentation in a fully remote environment.</li><li>Produced structured progress reports and presentations for leadership review.</li></ul>
+    </div>
+    <div class="experience-item">
+      <div class="exp-header">
+        <div class="exp-role">Project Manager</div>
+        <div class="exp-company">APD Project Management Limited</div>
+        <div class="exp-meta">March 2023 – March 2025</div>
+      </div>
+      <ul class="exp-bullets"><li>Managed construction-adjacent projects involving drawings, materials coordination, site execution, and client approvals.</li><li>Coordinated with suppliers, contractors, and production teams to meet delivery timelines.</li><li>Conducted site inspections, quality checks, and readiness assessments prior to handover.</li><li>Maintained detailed project documentation, schedules, and reporting systems.</li></ul>
+    </div>
+    <div class="experience-item">
+      <div class="exp-header">
+        <div class="exp-role">Assistant Project Manager</div>
+        <div class="exp-company">Haven Homes</div>
+        <div class="exp-meta">February 2020 – January 2023</div>
+      </div>
+      <ul class="exp-bullets"><li>Supported senior project managers with scheduling, task tracking, and documentation.</li><li>Assisted in coordinating vendors, contractors, and internal teams.</li><li>Prepared project trackers, reports, and client updates using Excel and Google Workspace.</li></ul>
+    </div></div>
+    <div class="section"><div class="section-title">Education</div>
+    <div class="education-item">
+      <div class="edu-degree">Bachelor of Science (B.Sc.) – Building Technology</div>
+      <div class="edu-school">Covenant University, Ogun State, Nigeria</div>
+      
+    </div></div>
+    <div class="section"><div class="section-title">Certifications</div>
+    <div class="cert-item"><span class="cert-name">Certified Project Manager – PSMI Learning Institute</span></div>
+    <div class="cert-item"><span class="cert-name">Associate Project Manager – APD Project Management Limited</span></div></div>
+    
+  </div>
+  <footer>
+    <div class="footer-text">Presented by <strong>Sagan</strong> for <strong class="accent">Advanced Control Solutions</strong></div>
+    <div class="footer-sub">getsagan.com · Redefining Recruitment</div>
+  </footer>
+</body>
+</html>
