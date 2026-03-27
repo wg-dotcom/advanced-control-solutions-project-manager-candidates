@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guillermo P - Project Manager | Advanced Control Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;500;600;700&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --primary: #FCB419;
+      --dark: #171717;
+      --highlight: #FFCC02;
+      --white: #FFFFFF;
+      --gray-50: #F8FAFB;
+      --gray-100: #F1F5F4;
+      --gray-200: #E2E8E7;
+      --gray-400: #94A3A0;
+      --gray-600: #4B5E5A;
+      --gray-700: #374845;
+      --font-heading: 'Merriweather', sans-serif;
+      --font-body: 'Lato', sans-serif;
+    }
+    body { font-family: var(--font-body); background: var(--gray-50); color: var(--dark); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    .back-link { display: block; background: var(--dark); padding: 12px 40px; font-family: var(--font-heading); font-size: 14px; font-weight: 500; }
+    .back-link a { color: var(--highlight); text-decoration: none; transition: color 0.2s; }
+    .back-link a:hover { color: var(--white); }
+    .back-link a::before { content: "\2190\00a0\00a0"; }
+    header { background: var(--dark); padding: 48px 40px 52px; position: relative; overflow: hidden; }
+    header::after { content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--primary), var(--highlight)); }
+    .header-brand { font-family: var(--font-heading); font-size: 32px; font-weight: 700; color: var(--white); letter-spacing: -0.5px; margin-bottom: 4px; }
+    .header-brand span { color: var(--highlight); }
+    .header-subtitle { font-family: var(--font-body); font-size: 14px; font-weight: 400; color: var(--gray-400); text-transform: uppercase; letter-spacing: 2px; }
+    .candidate-banner { background: linear-gradient(135deg, var(--primary), #FFCC02); padding: 36px 40px; color: var(--white); }
+    .candidate-name { font-family: var(--font-heading); font-size: 28px; font-weight: 700; letter-spacing: -0.3px; margin-bottom: 6px; }
+    .candidate-title { font-size: 16px; font-weight: 400; opacity: 0.9; margin-bottom: 12px; }
+    .candidate-contact { display: flex; flex-wrap: wrap; gap: 20px; font-size: 13px; opacity: 0.85; }
+    .resume-body { max-width: 900px; margin: 0 auto; padding: 40px 40px 60px; }
+    .section { margin-bottom: 36px; }
+    .section-title { font-family: var(--font-heading); font-size: 18px; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 1.5px; padding-bottom: 10px; border-bottom: 2px solid var(--gray-200); margin-bottom: 18px; }
+    .summary-text { font-size: 15px; color: var(--gray-700); line-height: 1.75; }
+    .skills-grid { display: grid; grid-template-columns: 170px 1fr; gap: 10px 20px; font-size: 14px; }
+    .skill-label { font-weight: 600; color: var(--dark); padding: 4px 0; }
+    .skill-value { color: var(--gray-600); padding: 4px 0; line-height: 1.6; }
+    .experience-item { margin-bottom: 24px; padding-left: 20px; border-left: 3px solid var(--primary); }
+    .experience-item:last-child { margin-bottom: 0; }
+    .exp-header { margin-bottom: 8px; }
+    .exp-role { font-family: var(--font-heading); font-size: 16px; font-weight: 700; color: var(--dark); }
+    .exp-company { font-size: 14px; font-weight: 500; color: var(--primary); }
+    .exp-meta { font-size: 13px; color: var(--gray-400); margin-top: 2px; }
+    .exp-desc { font-size: 14px; color: var(--gray-600); line-height: 1.65; }
+    .exp-bullets { font-size: 14px; color: var(--gray-600); line-height: 1.65; padding-left: 20px; margin-top: 6px; }
+    .exp-bullets li { margin-bottom: 4px; }
+    .education-item, .cert-item, .lang-item { font-size: 15px; margin-bottom: 8px; }
+    .edu-degree, .cert-name { font-weight: 600; color: var(--dark); }
+    .edu-school { color: var(--primary); font-weight: 500; }
+    .edu-year { font-size: 13px; color: var(--gray-400); }
+    footer { background: var(--dark); padding: 32px 40px; text-align: center; position: relative; }
+    footer::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--primary), var(--highlight)); }
+    .footer-text { font-family: var(--font-heading); font-size: 14px; color: var(--gray-400); }
+    .footer-text strong { color: var(--white); }
+    .footer-text .accent { color: var(--highlight); }
+    .footer-sub { font-size: 12px; color: var(--gray-600); margin-top: 8px; }
+    @media (max-width: 640px) {
+      header, .candidate-banner, .resume-body, .back-link, footer { padding-left: 20px; padding-right: 20px; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .candidate-contact { flex-direction: column; gap: 6px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="back-link"><a href="index.html">Back to All Candidates</a></div>
+  <header>
+    <div class="header-brand">Advanced Control Solutions<span>.</span></div>
+    <div class="header-subtitle">Candidate Resume</div>
+  </header>
+  <div class="candidate-banner">
+    <div class="candidate-name">Guillermo P</div>
+    <div class="candidate-title">Project Manager | Mexico</div>
+    <div class="candidate-contact">
+      <span>Mexico</span>
+      <span>8 yrs Construction PM experience</span>
+    </div>
+  </div>
+  <div class="resume-body">
+    <div class="section"><div class="section-title">Professional Summary</div><p class="summary-text">A fusion of deep understanding of architecture, finance, and project management, with over 15 years of experience delivering complex construction projects across LATAM, NA, and EMEA. Proven track record of managing full project lifecycles—from site selection, feasibility, and design through bidding, execution, commissioning, and closeout—with a focus on quality, schedule, and cost control, while ensuring compliance with building codes and workplace safety. Specializing in budgeting and financial oversight (CAPEX/OPEX), contract administration, and regulatory compliance. Skilled in leading cross-functional teams, overseeing general contractors, and managing stakeholders with high ethical standards and professional integrity.</p></div>
+    <div class="section"><div class="section-title">Skills &amp; Tech Stack</div><div class="skills-grid">
+    <div class="skill-label">Project Management</div>
+    <div class="skill-value">Full project lifecycle management, Site selection, Feasibility analysis, Design management, Bidding processes, Execution oversight, Commissioning, Project closeout, Quality control, Schedule control, Cost control, Risk mitigation, Strategic planning</div>
+    <div class="skill-label">Financial Management</div>
+    <div class="skill-value">CAPEX/OPEX budgeting, Financial oversight, Multi-million-dollar project budgets, Monthly budget reviews, Expense forecasting, Strategic procurement, Contract negotiations, Cost-effective solutions, Resource allocation optimization</div>
+    <div class="skill-label">Compliance &amp; Safety</div>
+    <div class="skill-value">Building codes compliance, NFPA safety regulations, Regulatory compliance, Workplace safety, Occupancy licenses, Site assessments, HSE coordination, LEED certification</div>
+    <div class="skill-label">Real Estate &amp; Facilities</div>
+    <div class="skill-value">Space planning, Office fit-outs, Renovations, Workspace optimizations, Lease negotiations, Real estate portfolio management, Property inspections, Preventive maintenance, HVAC systems, Electrical systems, Emergency response planning</div>
+    <div class="skill-label">Leadership &amp; Management</div>
+    <div class="skill-value">Cross-functional team leadership, International team management, Stakeholder management, General contractor oversight, Vendor management, Performance monitoring, Communication with corporate leadership</div></div></div>
+    <div class="section"><div class="section-title">Work Experience</div>
+    <div class="experience-item">
+      <div class="exp-header">
+        <div class="exp-role">Admin &amp; Facilities SSL DC Manager</div>
+        <div class="exp-company">DiDi</div>
+        <div class="exp-meta">Jun, 2024 - May, 2025</div>
+      </div>
+      <ul class="exp-bullets"><li>Managed Space Planning for International Offices, leading office fit-outs, renovations, and workspace optimizations across 8 LATAM countries and Egypt, ensuring alignment with corporate image &amp; standards, local regulations, and operational needs, including managed GCs selection, bidding processes, and on-site execution to deliver high-quality workspaces.</li><li>Managed construction and facilities budgets, optimizing CAPEX &amp; OPEX for new office developments, refurbishments, and maintenance programs, by ensuring cost-effective solutions through strategic procurement and contract negotiations.</li><li>Oversees regulatory Compliance &amp; workplace safety, by site assessments to know the buildings conditions, occupancy licenses and regulatory for office spaces, to ensure all facilities adhered to building codes, NFPA safety regulations, and working closely with legal and HSE teams.</li><li>Managed international teams, coordinated with landlords, contractors, and corporate leadership to ensure successful project execution.</li><li>Leasing Contracts &amp; Real Estate Management with strengthened lease visibility, negotiations, and renewals, reducing financial risks.</li><li>Facilities Management Services &amp; Preventive Maintenance by conducting regular inspections to ensure safe environment for internal employees and external vendors.</li></ul>
+    </div>
+    <div class="experience-item">
+      <div class="exp-header">
+        <div class="exp-role">Senior Real Estate Manager</div>
+        <div class="exp-company">Iron Mountain</div>
+        <div class="exp-meta">Jul, 2018 - Apr, 2023</div>
+      </div>
+      <ul class="exp-bullets"><li>Managed the extensive real estate portfolio, overseeing financial analyses, market trends, lease negotiations, and property acquisitions/dispositions to support organizational growth.</li><li>Facilitated lease contract renewals for long-term real estate strategies and leveraged market trends to optimize portfolio and enhance operational efficiency.</li><li>Conducting regular property inspections, overseeing maintenance activities to uphold company standards, and implementing value-added initiatives, conducting thorough risk assessments and implementing effective risk management strategies.</li><li>Maintained transparent communication channels with critical stakeholders, delivering regular financial performance reports, addressing concerns and fostering positive relationships.</li><li>Fostered collaboration across regions with legal advisors and external stakeholders to streamline real estate processes and negotiate favorable lease agreements.</li></ul>
+    </div>
+    <div class="experience-item">
+      <div class="exp-header">
+        <div class="exp-role">Construction Project Manager</div>
+        <div class="exp-company">Citigroup Inc.</div>
+        <div class="exp-meta">Aug, 2011 - Jun, 2017</div>
+      </div>
+      <ul class="exp-bullets"><li>Developed a project plan with the most realistic course, ensuring zero unplanned interruptions, including metrics of a successful project agreed upon with stakeholders.</li><li>Created a detailed budget and schedule based on the construction process, equipment costs, delivery time, and potential contingencies.</li><li>Oversaw construction project execution, from the kickoff meeting to delivery with financial closeout, followed risk mitigation plan, and delivering the project-related documents, inventory of deliverables, and proper close of GC contracts, and assisted in the LEED certification.</li><li>Managed multi-million-dollar project budgets, conducted monthly reviews, forecasted expenses, and made strategic decisions to optimize resource allocation and mitigate risks.</li><li>Implemented quality assurance measures, monitoring execution by regular site inspections.</li></ul>
+    </div>
+    <div class="experience-item">
+      <div class="exp-header">
+        <div class="exp-role">Facilities Operations Building Manager</div>
+        <div class="exp-company">Citigroup Inc.</div>
+        <div class="exp-meta">Aug 2007 - Jul, 2011</div>
+      </div>
+      <ul class="exp-bullets"><li>Oversaw implementation of preventive maintenance programs in HVAC systems, electrical systems, PFS, and all systems building-related by conducting regular inspections and ensuring zero unplanned service interruptions to employees following security clearance levels.</li><li>Prioritized the fixing task in case of equipment failure to reduce the time the equipment remained out of service and minimize the impact on the business.</li><li>Managed vendors using FM software to track and assign users' requests on maintenance activities and monitor vendors' performances to comply with service levels.</li><li>Developed comprehensive emergency response plans to ensure the safety and security of building occupants and mitigate the impact of emergencies on facility operations.</li><li>Identified and implemented energy-saving programs of green building practices and renewable energy solutions to enhance environmental performance to promote environmental solutions, including green initiatives to minimize the facility's environmental footprint.</li></ul>
+    </div></div>
+    <div class="section"><div class="section-title">Education</div>
+    <div class="education-item">
+      <div class="edu-degree">Master's Degree in Construction Management and Sustainable Architectural Design</div>
+      <div class="edu-school">Universidad Tecnologica de Mexico, Mexico City</div>
+      <div class="edu-year">2025 - Ongoing</div>
+    </div>
+    <div class="education-item">
+      <div class="edu-degree">Master's degree in Project Management PMP</div>
+      <div class="edu-school">Universidad de La Rioja, La Rioja Spain</div>
+      <div class="edu-year">2017 - 2018</div>
+    </div>
+    <div class="education-item">
+      <div class="edu-degree">Master's degree in Administration with a major in Finance</div>
+      <div class="edu-school">Universidad Del Valle de Mexico, Mexico City</div>
+      <div class="edu-year">2004 - 2006</div>
+    </div>
+    <div class="education-item">
+      <div class="edu-degree">B.S. in Architecture</div>
+      <div class="edu-school">Universidad Tecnologica de Mexico, Mexico City</div>
+      <div class="edu-year">1999 - 2001</div>
+    </div></div>
+    <div class="section"><div class="section-title">Certifications</div>
+    <div class="cert-item"><span class="cert-name">Project Management Certificate by Microsoft 2024</span></div>
+    <div class="cert-item"><span class="cert-name">PMP</span></div>
+    <div class="cert-item"><span class="cert-name">PMI Member. 492551</span></div></div>
+    
+  </div>
+  <footer>
+    <div class="footer-text">Presented by <strong>Sagan</strong> for <strong class="accent">Advanced Control Solutions</strong></div>
+    <div class="footer-sub">getsagan.com · Redefining Recruitment</div>
+  </footer>
+</body>
+</html>
