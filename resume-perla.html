@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perla T - Project Manager | Advanced Control Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;500;600;700&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --primary: #FCB419;
+      --dark: #171717;
+      --highlight: #FFCC02;
+      --white: #FFFFFF;
+      --gray-50: #F8FAFB;
+      --gray-100: #F1F5F4;
+      --gray-200: #E2E8E7;
+      --gray-400: #94A3A0;
+      --gray-600: #4B5E5A;
+      --gray-700: #374845;
+      --font-heading: 'Merriweather', sans-serif;
+      --font-body: 'Lato', sans-serif;
+    }
+    body { font-family: var(--font-body); background: var(--gray-50); color: var(--dark); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    .back-link { display: block; background: var(--dark); padding: 12px 40px; font-family: var(--font-heading); font-size: 14px; font-weight: 500; }
+    .back-link a { color: var(--highlight); text-decoration: none; transition: color 0.2s; }
+    .back-link a:hover { color: var(--white); }
+    .back-link a::before { content: "\2190\00a0\00a0"; }
+    header { background: var(--dark); padding: 48px 40px 52px; position: relative; overflow: hidden; }
+    header::after { content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--primary), var(--highlight)); }
+    .header-brand { font-family: var(--font-heading); font-size: 32px; font-weight: 700; color: var(--white); letter-spacing: -0.5px; margin-bottom: 4px; }
+    .header-brand span { color: var(--highlight); }
+    .header-subtitle { font-family: var(--font-body); font-size: 14px; font-weight: 400; color: var(--gray-400); text-transform: uppercase; letter-spacing: 2px; }
+    .candidate-banner { background: linear-gradient(135deg, var(--primary), #FFCC02); padding: 36px 40px; color: var(--white); }
+    .candidate-name { font-family: var(--font-heading); font-size: 28px; font-weight: 700; letter-spacing: -0.3px; margin-bottom: 6px; }
+    .candidate-title { font-size: 16px; font-weight: 400; opacity: 0.9; margin-bottom: 12px; }
+    .candidate-contact { display: flex; flex-wrap: wrap; gap: 20px; font-size: 13px; opacity: 0.85; }
+    .resume-body { max-width: 900px; margin: 0 auto; padding: 40px 40px 60px; }
+    .section { margin-bottom: 36px; }
+    .section-title { font-family: var(--font-heading); font-size: 18px; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 1.5px; padding-bottom: 10px; border-bottom: 2px solid var(--gray-200); margin-bottom: 18px; }
+    .summary-text { font-size: 15px; color: var(--gray-700); line-height: 1.75; }
+    .skills-grid { display: grid; grid-template-columns: 170px 1fr; gap: 10px 20px; font-size: 14px; }
+    .skill-label { font-weight: 600; color: var(--dark); padding: 4px 0; }
+    .skill-value { color: var(--gray-600); padding: 4px 0; line-height: 1.6; }
+    .experience-item { margin-bottom: 24px; padding-left: 20px; border-left: 3px solid var(--primary); }
+    .experience-item:last-child { margin-bottom: 0; }
+    .exp-header { margin-bottom: 8px; }
+    .exp-role { font-family: var(--font-heading); font-size: 16px; font-weight: 700; color: var(--dark); }
+    .exp-company { font-size: 14px; font-weight: 500; color: var(--primary); }
+    .exp-meta { font-size: 13px; color: var(--gray-400); margin-top: 2px; }
+    .exp-desc { font-size: 14px; color: var(--gray-600); line-height: 1.65; }
+    .exp-bullets { font-size: 14px; color: var(--gray-600); line-height: 1.65; padding-left: 20px; margin-top: 6px; }
+    .exp-bullets li { margin-bottom: 4px; }
+    .education-item, .cert-item, .lang-item { font-size: 15px; margin-bottom: 8px; }
+    .edu-degree, .cert-name { font-weight: 600; color: var(--dark); }
+    .edu-school { color: var(--primary); font-weight: 500; }
+    .edu-year { font-size: 13px; color: var(--gray-400); }
+    footer { background: var(--dark); padding: 32px 40px; text-align: center; position: relative; }
+    footer::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--primary), var(--highlight)); }
+    .footer-text { font-family: var(--font-heading); font-size: 14px; color: var(--gray-400); }
+    .footer-text strong { color: var(--white); }
+    .footer-text .accent { color: var(--highlight); }
+    .footer-sub { font-size: 12px; color: var(--gray-600); margin-top: 8px; }
+    @media (max-width: 640px) {
+      header, .candidate-banner, .resume-body, .back-link, footer { padding-left: 20px; padding-right: 20px; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .candidate-contact { flex-direction: column; gap: 6px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="back-link"><a href="index.html">Back to All Candidates</a></div>
+  <header>
+    <div class="header-brand">Advanced Control Solutions<span>.</span></div>
+    <div class="header-subtitle">Candidate Resume</div>
+  </header>
+  <div class="candidate-banner">
+    <div class="candidate-name">Perla T</div>
+    <div class="candidate-title">Project Manager | Mexico</div>
+    <div class="candidate-contact">
+      <span>Mexico</span>
+      <span>6 yrs Construction PM experience</span>
+    </div>
+  </div>
+  <div class="resume-body">
+    <div class="section"><div class="section-title">Professional Summary</div><p class="summary-text">Senior Construction Project Manager with over 8 years of experience in commercial construction and Division 10 projects. Started as a junior architect, progressed to Senior Designer in oil and gas, and now manage projects from planning through closeout. Experienced in scheduling, budgets, procurement, submittals, vendor coordination, and project documentation. Skilled at managing multiple projects remotely with U.S.-based teams. Fluent in English with global remote work experience. Highly coachable and adaptable.</p></div>
+    <div class="section"><div class="section-title">Skills &amp; Tech Stack</div><div class="skills-grid">
+    <div class="skill-label">Core Skills</div>
+    <div class="skill-value">Door &amp; Hardware Detailing, Division 10 Commercial Construction, Project Scheduling &amp; Budget Management, Procurement &amp; Material Tracking, Submittals, RFIs, and Change Orders, Vendor &amp; Subcontractor Coordination, Quality Control &amp; Compliance, Project Documentation &amp; Reporting, Project Closeout &amp; Handover, Risk Management, Remote Team Collaboration, Fluent English Communication</div>
+    <div class="skill-label">Software</div>
+    <div class="skill-value">AutoCAD, 3ds Max, Excel, Adobe Creative Cloud, Microsoft Office, Autodesk Vault, Ai for Architecture, Procrearte, D5 Render, Photoshop, Procore, SketchUp, Advanced AutoCAD, Adobe Acrobat, Microsoft Word, Outlook, Bluebeam Revu, Microsoft Project, Google Sheets</div></div></div>
+    <div class="section"><div class="section-title">Work Experience</div>
+    <div class="experience-item">
+      <div class="exp-header">
+        <div class="exp-role">Senior Construction Project Manager – Division 10</div>
+        <div class="exp-company">PEMA Constructora</div>
+        <div class="exp-meta">October 2024- Actual</div>
+      </div>
+      <ul class="exp-bullets"><li>Lead multiple Division 10 commercial projects from pre-construction through closeout.</li><li>Manage budgets, schedules, deliverables, and procurement activities.</li><li>Coordinate with general contractors, subcontractors, and vendors to meet milestones.</li><li>Oversee submittals, material tracking, and quality controlPrepare reports and lead project closeouts and handovers.</li></ul>
+    </div>
+    <div class="experience-item">
+      <div class="exp-header">
+        <div class="exp-role">Senior Designer</div>
+        <div class="exp-company">Subsea7</div>
+        <div class="exp-meta">2023-October 2024</div>
+      </div>
+      <ul class="exp-bullets"><li>Led design development for oil and gas facilities.</li><li>Produced and reviewed technical drawings and design packages.</li><li>Coordinated with engineers, project managers, and multidisciplinary teams.</li><li>Ensured compliance with industry codes, standards, and client specifications.</li><li>Supported constructability reviews and technical problem-solving.</li></ul>
+    </div>
+    <div class="experience-item">
+      <div class="exp-header">
+        <div class="exp-role">Project Manager/Designer</div>
+        <div class="exp-company">Raiz Mx</div>
+        <div class="exp-meta">2020-2023</div>
+      </div>
+      <ul class="exp-bullets"><li>Managed multiple commercial projects including interior fit-outs</li><li>Controlled project scope, schedules, and budgets.</li><li>Reviewed drawings, submittals, and construction documentation.</li><li>Coordinated with clients, contractors, and consultants.</li><li>Maintained project documentation and progress reports</li></ul>
+    </div>
+    <div class="experience-item">
+      <div class="exp-header">
+        <div class="exp-role">Junior Architect</div>
+        <div class="exp-company">Arturo Campos Arquitectos</div>
+        <div class="exp-meta">2016-2020</div>
+      </div>
+      <ul class="exp-bullets"><li>Developed detailed interior construction drawings, including door locations, finishes, and hardware coordination.</li><li>Coordinated with vendors and suppliers to confirm product selections and technical requirements.</li><li>Assisted with submittals, revisions, and drawing updates during construction phases.</li><li>Assisted with architectural design and technical documentation.</li><li>Supported project documentation and site visits.</li></ul>
+    </div></div>
+    <div class="section"><div class="section-title">Education</div>
+    <div class="education-item">
+      <div class="edu-degree">Degree in Architecture</div>
+      <div class="edu-school">University Marista of Merida</div>
+      <div class="edu-year">2015 - 2020</div>
+    </div>
+    <div class="education-item">
+      <div class="edu-degree">Master´s degree on Sustainable Interior Design</div>
+      <div class="edu-school">University Anahuac Mayab</div>
+      <div class="edu-year">2020 - 2022</div>
+    </div></div>
+    <div class="section"><div class="section-title">Certifications</div>
+    <div class="cert-item"><span class="cert-name">Revit and Photoshop Course. Arturo Campos Arquitectos . 2018</span></div>
+    <div class="cert-item"><span class="cert-name">3ds Max. Rendering Workshop. Tresso. 14/07/2017</span></div>
+    <div class="cert-item"><span class="cert-name">Advanced Vray. Tresso. Date 08/2017</span></div>
+    <div class="cert-item"><span class="cert-name">Fine Arts. 14 years. 4 with Malena Peon when I was 6 years old and 10 with Sandra Nikolai starting on Middle School</span></div></div>
+    <div class="section"><div class="section-title">Languages</div>
+    <div class="lang-item"><strong>Spanish:</strong> Native</div>
+    <div class="lang-item"><strong>English:</strong> Advanced</div></div>
+  </div>
+  <footer>
+    <div class="footer-text">Presented by <strong>Sagan</strong> for <strong class="accent">Advanced Control Solutions</strong></div>
+    <div class="footer-sub">getsagan.com · Redefining Recruitment</div>
+  </footer>
+</body>
+</html>
